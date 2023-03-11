@@ -49,8 +49,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
             super(itemView);
 
             textTitle = itemView.findViewById(R.id.shopping_heading);
-            textDateTime = itemView.findViewById(R.id.shopping_list_text);
-            textNote = itemView.findViewById(R.id.date_shop);
+            textDateTime = itemView.findViewById(R.id.date_shop);
+            textNote = itemView.findViewById(R.id.shopping_list_text);
         }
 
         public void setNote(ShoppingListEntities shoppingListEntities) {
