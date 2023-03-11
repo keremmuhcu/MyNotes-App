@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E2E2E"
+    tools:context=".activities.AddNewNotesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="40dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/baseline_keyboard_backspace_24"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/saveNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_save_btn"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:padding="7dp"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgBack"
+                android:text="Current Date"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:includeFontPadding="false"/>
+
+            <EditText
+                android:id="@+id/inputNoteTitle"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/textDateTime"
+                android:hint="Note Title"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:layout_marginTop="15dp"
+                android:includeFontPadding="false"
+                android:imeOptions="actionDone"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:importantForAutofill="no"/>
+
+            <View
+                android:id="@+id/viewLeftIndicator"
+                android:layout_width="7dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/inputNoteTitle"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_indicator"/>
+
+            <EditText
+                android:id="@+id/inputEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inputNoteTitle"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/viewLeftIndicator"
+                android:background="@null"
+                android:ellipsize="end"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:hint="Type Yout Note Here"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:maxLines="8"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="14sp" />
+
+
+            <View
+                android:id="@+id/viewRightIndicator"
+                android:layout_width="7dp"
+                android:layout_height="180dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/inputNoteTitle"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_indicator"/>
+
+            <ImageView
+                android:id="@+id/imageNote"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/viewLeftIndicator"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="12dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/imageRemove"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="4dp"
+                android:layout_below="@+id/viewLeftIndicator"
+                android:src="@drawable/baseline_delete_24"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include layout="@layout/bottom_sheet_dialog"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
